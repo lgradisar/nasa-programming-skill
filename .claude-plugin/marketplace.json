@@ -1,0 +1,14 @@
+{
+  "name": "nasa-skills",
+  "owner": {
+    "name": "lgradisar",
+    "url": "https://github.com/lgradisar"
+  },
+  "plugins": [
+    {
+      "name": "power-of-10",
+      "source": "./",
+      "description": "NASA/JPL Power of 10 rules generalized for everyday code, with a writing guideline and a reviewer."
+    }
+  ]
+}
