@@ -1,5 +1,5 @@
 ---
-name: power-of-10
+name: code
 description: Engineering rules adapted from NASA/JPL's "Power of 10" for everyday code. Use whenever writing, editing, or refactoring source code in any language (Python, JavaScript, TypeScript, C, C#, Go, or others). Covers control flow, loop termination, resource ownership, function size, input validation, scope, error handling, explicit over dynamic code, warnings, simplicity, and comments. Not for documentation-only or configuration-only changes.
 ---
 

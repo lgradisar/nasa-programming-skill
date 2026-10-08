@@ -1,7 +1,7 @@
 {
   "name": "power-of-10",
   "description": "NASA/JPL Power of 10 rules generalized for everyday code: a writing guideline skill and a review skill, with Python, JavaScript, TypeScript, C, C#, and Go references.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "lgradisar",
     "url": "https://github.com/lgradisar"

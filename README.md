@@ -12,8 +12,8 @@ Works with Claude Code as a plugin, and with any agent that reads the open
 
 | Skill | What it does |
 |---|---|
-| `power-of-10` | Loads while the agent writes or edits code. Gives it the eleven rules plus a short reference for the language at hand. |
-| `power-of-10-review` | Reviews code on request. Runs the project's existing linters in check-only mode, reads the rest, and reports each violation with rule number, location, severity, and a fix. Never changes code. |
+| `power-of-10:code` | Loads while the agent writes or edits code. Gives it the eleven rules plus a short reference for the language at hand. |
+| `power-of-10:review` | Reviews code on request. Runs the project's existing linters in check-only mode, reads the rest, and reports each violation with rule number, location, severity, and a fix. Never changes code. |
 
 Both skills share one set of language references, one per language, each about
 400 words.
@@ -30,13 +30,14 @@ Both skills share one set of language references, one per language, each about
 /plugin install power-of-10@nasa-skills
 ```
 
-The review command is then `/power-of-10:power-of-10-review`.
+The review command is then `/power-of-10:review`.
 
 ### Plain skills
 
 Clone the repo and copy both folders from `skills/` into `~/.claude/skills/` (all
 projects) or `.claude/skills/` (one project). Both folders are needed; the reviewer
-reads the rules from its sibling. The review command is then `/power-of-10-review`.
+reads the rules from its sibling. The review command is then `/review`. If that
+name is taken, rename the folders; keep them next to each other.
 
 ## The eleven rules
 
@@ -63,19 +64,21 @@ and the requirements do not give one, it becomes a required parameter.
 
 The writing skill activates on its own when the task is editing source code.
 Activation is best-effort, as with any skill. You can also name it: "follow the
-power-of-10 skill".
+Power of 10 rules".
 
 Review the current changes (staged, unstaged, and untracked files):
 
 ```bash
-/power-of-10-review
+/power-of-10:review
 ```
 
 Review one file or folder, changed or not:
 
 ```bash
-/power-of-10-review src/parser.py
+/power-of-10:review src/parser.py
 ```
+
+Plain words work too: "review this against the NASA rules".
 
 The reviewer uses linters only when the project already has them configured and
 installed. It never installs tools, never runs `--fix`, and never edits files. If a
@@ -86,12 +89,12 @@ language has no linter, the report names one you could add.
 ```
 .claude-plugin/        plugin.json, marketplace.json
 skills/
-  power-of-10/
+  code/
     SKILL.md           policy, the eleven rules, language table
     reference/
       tooling.md       how to run project tools safely
       python.md  javascript.md  typescript.md  c.md  csharp.md  go.md
-  power-of-10-review/
+  review/
     SKILL.md           review procedure
     reference/
       report-format.md

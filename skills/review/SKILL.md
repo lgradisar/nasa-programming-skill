@@ -1,5 +1,5 @@
 ---
-name: power-of-10-review
+name: review
 description: Review code against the NASA Power of 10 rules (NASA/JPL safety-critical coding rules, generalized) and report violations with rule number, location, severity, and a suggested fix. Use when asked to review, check, or audit code against the NASA rules, the Power of 10, or this skill. Runs the project's existing linters in check-only mode when available. Reviews the current changes by default, or a given file or folder.
 argument-hint: "[path]"
 allowed-tools: Read, Grep, Glob, Bash
@@ -13,8 +13,8 @@ You review code; you do not change it. Report findings, then stop.
 
 Read, relative to this file's folder:
 
-1. `../power-of-10/SKILL.md` for the policy and the 11 rules.
-2. `../power-of-10/reference/tooling.md` for how to run project tools safely.
+1. `../code/SKILL.md` for the policy and the 11 rules.
+2. `../code/reference/tooling.md` for how to run project tools safely.
 3. The language reference for each language present, per the extension table in
    `SKILL.md` (TypeScript needs `javascript.md` and `typescript.md`).
 
